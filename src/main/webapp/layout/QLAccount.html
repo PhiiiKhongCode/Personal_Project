@@ -1,0 +1,16 @@
+<form>
+    <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input type="username" class="form-control" ng-model="account.username">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Fullname</label>
+        <input type="fullname" class="form-control" ng-model="account.fullname">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" ng-model="account.email">
+    </div>
+    <button type="submit" class="btn btn-primary" ng-click="update(account)">Submit</button>
+    <button class="btn btn-danger" ng-click="disable()">Disable account</button>
+</form>

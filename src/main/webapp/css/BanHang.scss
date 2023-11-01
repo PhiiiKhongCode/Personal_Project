@@ -1,0 +1,239 @@
+$yellow: #ffd400;
+
+@mixin card-img-top {
+  object-fit: cover;
+  height: 17em;
+  width: 14em;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  // background-color: #dceeff;
+  height: auto;
+
+  // .nav {
+  //   top: 0;
+  //   // overflow: hidden;
+  //   width: 100%;
+  //   height: 8vh;
+  //   position: fixed;
+  //   width: 100%;
+  //   font-size: 2vmin;
+  //   box-shadow: 0 0 5px 2px #ccc;
+  //   z-index: 7000;
+  //   left: 0;
+
+  .navbar {
+    top: 0;
+    overflow: visible;
+    // width: 100%;
+    // height: 8vh;
+    position: fixed;
+    overflow-y: visible;
+    width: 100%;
+    font-size: 1.5em;
+    background-color: $yellow;
+    box-shadow: 0 0 5px 2px #ccc;
+    z-index: 1000;
+    left: 0;
+    border-bottom: solid 1px #ccc;
+
+    .nav-item {
+      margin-right: 1vw;
+      --c: #fff;
+      /* the border color */
+      --b: 2px;
+      /* the border thickness*/
+      --g: 5px;
+      /* the gap on hover */
+
+      padding: calc(var(--g) + var(--b));
+      --_g: #0000 25%, var(--c) 0;
+      background: conic-gradient(from 180deg at top var(--b) right var(--b), var(--_g)) var(--_i, 200%) 0 /200% var(--_i, var(--b)) no-repeat,
+        conic-gradient(at bottom var(--b) left var(--b), var(--_g)) 0 var(--_i, 200%)/var(--_i, var(--b)) 200% no-repeat;
+      transition: .3s, background-position .3s .3s;
+      cursor: pointer;
+      border-left: solid 1px #ccc;
+    }
+
+    .nav-item:hover {
+      --_i: 100%;
+      transition: .3s, background-size .3s .3s;
+    }
+
+    form {
+      margin-right: 1rem;
+    }
+
+    // .categories {
+    //   background-color: #ffefdb;
+    //   height: 10vmax;
+    //   top: 0;
+    //   position: fixed;
+    // }
+  }
+
+
+  .container {
+    margin-top: 8vh;
+
+
+    .slide-show {
+      margin-top: 6rem;
+
+      .carousel {
+        .carousel-item {
+          img {
+            height: 15rem;
+          }
+
+          height: 15rem;
+        }
+      }
+    }
+
+    .content {
+      text-align: center;
+      padding-right: 1rem;
+      padding-left: 1rem;
+      padding-bottom: 2rem;
+      padding-top: 1rem;
+      border-radius: 25px 25px;
+
+      .swiper {
+
+        // .parallax-bg {
+        //   position: absolute;
+        //   left: 0;
+        //   top: 0;
+        //   width: 130%;
+        //   height: 100%;
+        //   -webkit-background-size: cover;
+        //   background-size: cover;
+        //   background-position: center;
+        // }
+
+        .card {
+          height: 30em;
+          width: 10em;
+          cursor: pointer;
+
+          &:hover {
+            .card-img-top {
+              @include card-img-top();
+              position: relative;
+              /* Declared position allows for location changes */
+              top: -5px;
+              /* Moves the image 2px closer to the top of the page */
+              animation-name: imagefade;
+              animation-timing-function: ease-in-out;
+              animation-iteration-count: infinite;
+              animation-duration: 8s;
+              animation-delay: 6s;
+            }
+          }
+
+          .card-img-top {
+            @include card-img-top();
+          }
+
+          .card-body {
+            margin: 0 auto;
+          }
+
+          .fa-cart-plus {
+            font-size: larger;
+            color: #e04040;
+            // border: 1px solid #000;
+          }
+        }
+
+        .swiper-button-prev {
+          text-decoration: none;
+          color: gray;
+          background-color: rgba(235, 223, 223, 0.5);
+          padding: 1vmin 1rem;
+          border-top-right-radius: 20%;
+          border-bottom-right-radius: 20%;
+        }
+
+        .swiper-button-next {
+          text-decoration: none;
+          color: gray;
+          background-color: rgba(235, 223, 223, 0.5);
+          padding: 1vmin 1rem;
+          border-top-left-radius: 20%;
+          border-bottom-left-radius: 20%;
+        }
+      }
+    }
+
+    h1 {
+      float: left;
+      margin-bottom: 2vh;
+      margin-left: 1vw;
+
+      i {
+        display: inline;
+      }
+
+      p {
+        display: inline;
+        color: yellow;
+      }
+    }
+
+
+    .carousel-inner {
+      background-color: #cdcfc9;
+
+      img {
+        height: 70vh;
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+
+  }
+
+  footer {
+    height: 15em;
+    background-color: #fff;
+    margin-bottom: 0;
+    margin-top: 1px;
+
+
+    .footer:nth-child(n+0) {
+      background-color: #ebdef0;
+
+      div {
+
+        margin: 2rem 2rem;
+      }
+    }
+
+    // .footer:nth-child(even) {
+    //   background-color: $yellow;
+
+    //   div {
+
+    //     margin: 2rem 2rem;
+    //   }
+    // }
+
+
+    // .footer:nth-child(odd) {
+    //   div {
+    //     margin: 2rem 2rem;
+    //   }
+    // }
+
+
+  }
+}

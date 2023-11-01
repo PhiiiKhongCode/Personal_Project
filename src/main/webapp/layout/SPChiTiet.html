@@ -1,0 +1,115 @@
+<div class="main">
+    <div class="row mb-5 main-concept">
+        <img src="../resources/images/{{pDetail.image}}" alt="Image product" class="col-sm-6 img-detail img-fluid">
+        <div class="col-sm-6">
+            <h3>{{pDetail.name}}</h3>
+            <h5>Danh mục: {{pDetail.category.name}}</h5>
+            <div class="row row-cols-3">
+                <i class="col"></i>
+                <div class="price col">
+                    <h6 class="price-real">{{pDetail.price}}$</h6>
+                    <h6 class="price-old">{{pDetail.price+100}}$</h6>
+                </div>
+                <i class="col"></i>
+            </div>
+            <div class="row row-cols-1 group-btn">
+                <div class="col mb-3 group-top"><input type="number" min="1" class="quantity" ng-model="pDetail.qtt">
+                    <button class="add-to-cart col" ng-click="addToCart(pDetail.id)">THÊM VÀO GIỎ <i
+                            class="fa-solid fa-cart-plus"></i></button>
+                </div>
+                <button class="col-12 buy">MUA NGAY</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<style>
+    .main {
+        background-color: #fff;
+        padding-left: 1vmin;
+        margin-bottom: 1px;
+        padding-top: 2em;
+    }
+
+    .img-detail {
+        border: 1px solid #d1d5db;
+        border-radius: 25px 25px;
+        object-fit: cover;
+        height: 60%;
+    }
+
+    h3 {
+        font-family: sans-serif !important;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        color: #0a263c;
+        display: -webkit-box;
+        font-size: 3em;
+        font-weight: 700;
+        line-height: 2;
+        margin: 0 10px 0 0;
+        overflow: hidden;
+        margin-left: 1em;
+        margin-top: 1em;
+    }
+
+    div h5 {
+        text-align: center;
+        margin-top: 5em;
+    }
+
+    div .price {
+        margin-top: 3em;
+        text-align: center !important;
+        font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+        box-sizing: inherit;
+        border: 2px solid #fd2424;
+        border-radius: 10px 10px;
+    }
+
+    div .price .price-real {
+        font-size: 25px;
+        font-weight: 900;
+        color: #fd2424;
+    }
+
+    div .price .price-old {
+        font-size: 25px;
+        font-weight: 500;
+        color: #4e4e4e;
+        text-decoration: line-through;
+    }
+
+    div .add-to-cart {
+        background: linear-gradient(180deg, #3a78d0, #277cea);
+        border: 2px solid #277cea;
+        color: #fff;
+        border-radius: 5px 5px;
+        margin-left: 1em;
+        height: 3em;
+        width: 21em;
+    }
+
+    div .quantity {
+        height: 3em;
+        margin-left: 0;
+        border: 1px solid #d1d5db;
+        border-radius: 5px 5px;
+    }
+
+    div .group-btn {
+        margin-top: 9em;
+        margin-right: 1.5em;
+        margin-left: 1em;
+        margin-bottom: 10em;
+        padding-left: 0;
+        font-weight: 700;
+        font-weight: bold;
+    }
+
+    .buy {
+        height: 3em;
+        border: 2px solid #d1d5db;
+        border-radius: 5px 5px;
+    }
+</style>

@@ -1,0 +1,26 @@
+<div>
+
+</div>
+<h3>Đơn hàng</h3>
+<table class="table table-striped table-hover table-info">
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Tên khách hàng</th>
+            <th>Ngày tạo</th>
+            <th>Địa chỉ</th>
+            <td>Trạng thái</td>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="or in orders">
+            <td>{{$index+1}}</td>
+            <td>{{or.account.username}}</td>
+            <td>{{or.createDate}}</td>
+            <td>{{or.address}}</td>
+            <td>{{or.status}}</td>
+            <td><i class="fa-solid fa-circle-info" style="color: green;" ng-click=""></i></td>
+        </tr>
+    </tbody>
+</table>

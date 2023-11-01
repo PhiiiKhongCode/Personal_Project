@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shopping</title>
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css">
+    <!-- swiper wrapper library -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <!--    bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <!--angularJS-->
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/angular-route.js"></script>
+
+    <!-- angularjs material -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.2.1/angular-material.min.css">
+    <!-- Angular Material Dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-messages.min.js"></script>
+
+    <!-- Angular Material Javascript now available via Google CDN; version 1.2.1 used here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.2.1/angular-material.min.js"></script>
+
+    <link rel="stylesheet" href="../css/BanHang.css">
+
+</head>
+
+<body ng-app="banHangApp">
+    <!-- <div class="nav"> -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#/ban-hang">TECH STORE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item" style="margin-right: 75vw;">
+                        <a class="nav-link active" aria-current="page" href="#/ban-hang">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#/gio-hang"><i class="fa-solid fa-cart-shopping"><span
+                                    style="font-size: 0.4em; margin-top: 2.5em;"
+                                    class="position-absolute top-0 translate-middle badge bg-secondary">
+                                    {{totalCart}}
+                                </span></i></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="fa-solid fa-user"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="#/account">Tài khoản</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#/orders">Hóa đơn</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#" ng-click="logout()">Đăng xuất</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- <li class="nav-item">
+                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2 nav-item" type="search" placeholder="Search" aria-label="Search"
+                    style="border: none;">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form> -->
+            </div>
+        </div>
+    </nav>
+    <!-- <div class="categories">
+        <p>Điện thoại</p>
+        <p>Laptop</p>
+        <p>Đồng hồ</p>
+    </div>
+</div> -->
+
+    <main class="container">
+
+
+        <div ng-view></div>
+
+
+    </main>
+    <footer class="row">
+        <div class="col-sm-3 footer">
+            <div>
+                <h1>TECH STORE</h1>
+                <p>098765432</p>
+                <p>techstore@gmail.com</p>
+            </div>
+        </div>
+        <div class="col-sm-3 footer">
+            <div>
+                <h4>GIỚI THIỆU</h4>
+                <p>Công Ty TNHH TECH STORE<br />
+                    Hệ thống cửa hàng<br />
+                    Tuyển dụng<br />
+                    Sản phẩm</p>
+            </div>
+        </div>
+        <div class="col-sm-3 footer">
+            <div>
+                <h4>CHƯƠNG TRÌNH & CHÍNH SÁCH</h4>
+                <p>Chương trình ưu đãi<br />
+                    Quy định thanh toán</p>
+            </div>
+        </div>
+        <div class="col-sm-3 footer"></div>
+    </footer>
+
+    <script src="../Router.js"></script>
+    <script src="../config/apiUrl.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
